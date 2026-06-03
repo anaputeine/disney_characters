@@ -1,11 +1,10 @@
 import 'package:disney_characters/repository/character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../model/detail_character.dart';
+import '../model/detail/detail_character.dart';
 
 class CharacterDetailPage extends StatefulWidget {
-  final int id;
+  final String id;
 
   const CharacterDetailPage({super.key, required this.id});
 
@@ -16,12 +15,14 @@ class CharacterDetailPage extends StatefulWidget {
 class _CharacterDetailPageState extends State<CharacterDetailPage> {
   late final CharacterRepository _characterRepository;
   late final Future<DetailCharacter>? _character;
+  late bool _isFavourite;
 
   @override
   void initState() {
     super.initState();
     _characterRepository = context.read();
     _character = _characterRepository.getOneCharacter(widget.id);
+    _setIsFavourite();
   }
 
   @override
@@ -41,7 +42,7 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
         final character =
             snapshot.data ??
             DetailCharacter(
-              id: 0,
+              id: '0',
               films: [],
               shortFilms: [],
               tvShows: [],
@@ -98,9 +99,35 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
               ],
             ),
           ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () async {
+              if (_isFavourite) {
+                await _characterRepository.removeFavourite(widget.id);
+              } else {
+                await _characterRepository.addFavourite(widget.id);
+              }
+
+              setState(() {
+                _isFavourite = !_isFavourite;
+              });
+            },
+            child: Icon(
+              _isFavourite ? Icons.favorite : Icons.favorite_border,
+            ),
+          ),
         );
       },
     );
+  }
+
+  Future<void> _setIsFavourite() async {
+    final value = await _characterRepository.checkFavourite(
+      widget.id,
+    );
+
+    setState(() {
+      _isFavourite = value;
+    });
   }
 }
 

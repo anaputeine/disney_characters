@@ -1,4 +1,4 @@
-import 'package:disney_characters/model/list_character.dart';
+import 'package:disney_characters/model/list/list_character.dart';
 import 'package:disney_characters/repository/character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               snapshot.data ??
               [
                 ListCharacter(
-                  id: 0,
+                  id: '0',
                   name: "nothing",
                   imageUrl: "https://i.pinimg.com/236x/ce/1d/01/ce1d01b332e2672581c89b3f5734b6c3.jpg",
                 ),
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
 
   void _showCharacterDetail({
     required BuildContext context,
-    required int id,
+    required String id,
   }) => Navigator.push(
     context,
     MaterialPageRoute(

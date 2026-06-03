@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class DetailCharacter extends Equatable {
-  final int id;
+  final String id;
   final List<String> films;
   final List<String> shortFilms;
   final List<String> tvShows;

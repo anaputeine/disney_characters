@@ -1,4 +1,4 @@
-import 'package:disney_characters/model/list_character.dart';
+import 'package:disney_characters/model/list/list_character.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -31,7 +31,7 @@ class Item extends Equatable {
 
   ListCharacter toListCharacter() {
     return ListCharacter(
-      id: id,
+      id: id.toString(),
       name: name ?? 'no name',
       imageUrl: imageUrl ?? 'https://i.pinimg.com/736x/d7/18/3f/d7183f72078df410f83279c1b7bbc191.jpg',
     );

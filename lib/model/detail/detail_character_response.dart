@@ -1,5 +1,5 @@
-import 'package:disney_characters/model/detail_character.dart';
-import 'package:disney_characters/model/list_character.dart';
+import 'package:disney_characters/model/detail/detail_character.dart';
+import 'package:disney_characters/model/list/list_character.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -46,7 +46,7 @@ class Item extends Equatable {
 
   DetailCharacter toDetailCharacter() {
     return DetailCharacter(
-      id: id,
+      id: id.toString(),
       films: films ?? [],
       shortFilms: shortFilms ?? [],
       tvShows: tvShows ?? [],
