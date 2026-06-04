@@ -3,7 +3,7 @@ import 'package:disney_characters/domain/repository/character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'character_detail_page.dart';
+import 'detail/character_detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
   }) => Navigator.push(
     context,
     MaterialPageRoute(
-      builder: (context) => CharacterDetailPage(id: id),
+      builder: (context) => CharacterDetailPage.withCubit(id: id),
     ),
   );
 }
