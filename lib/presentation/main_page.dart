@@ -1,6 +1,9 @@
-import 'package:disney_characters/presentation/favourites_page.dart';
+import 'package:disney_characters/presentation/favourite/favourites_page.dart';
 import 'package:disney_characters/presentation/list/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'favourite/bloc/favourite_cubit.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -19,7 +22,7 @@ class _MainPageState extends State<MainPage> {
         index: _currentIndex,
         children: [
           HomePage.withCubit(),
-          FavouritesPage(),
+          FavouritesPage.withCubit(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -32,6 +35,10 @@ class _MainPageState extends State<MainPage> {
           setState(() {
             _currentIndex = index;
           });
+
+          if (index == 1) {
+            context.read<FavouriteCubit>().loadFavourite();
+          }
         },
         items: [
           BottomNavigationBarItem(
