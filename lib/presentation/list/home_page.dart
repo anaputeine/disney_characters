@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                       character.imageUrl,
                       width: 400,
                       height: 268,
-                      fit: .fill,
+                      fit: .cover,
 
                       errorBuilder: (context, error, stackTrace) {
                         return Image.network(
