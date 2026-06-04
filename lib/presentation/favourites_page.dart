@@ -1,7 +1,8 @@
-import 'package:disney_characters/repository/character_repository.dart';
+import 'package:disney_characters/domain/repository/character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../model/favourite/favourite_character.dart';
+
+import '../domain/model/favourite_character.dart';
 
 class FavouritesPage extends StatefulWidget {
   const FavouritesPage({super.key});

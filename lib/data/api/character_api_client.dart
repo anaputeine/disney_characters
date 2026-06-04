@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:disney_characters/model/detail/detail_character_response.dart';
-import 'package:disney_characters/model/list/list_character_response.dart';
+import 'package:disney_characters/data/model/detail/detail_character_response.dart';
+import 'package:disney_characters/data/model/list/list_character_response.dart';
 
 import '../model/favourite/favourite_character_response.dart';
 

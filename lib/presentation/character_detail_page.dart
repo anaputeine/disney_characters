@@ -1,7 +1,8 @@
-import 'package:disney_characters/repository/character_repository.dart';
+import 'package:disney_characters/domain/repository/character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../model/detail/detail_character.dart';
+
+import '../domain/model/detail_character.dart';
 
 class CharacterDetailPage extends StatefulWidget {
   final String id;

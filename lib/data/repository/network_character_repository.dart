@@ -1,11 +1,11 @@
-import 'package:disney_characters/api/favourite_api_client.dart';
-import 'package:disney_characters/model/list/list_character.dart';
-import 'package:disney_characters/repository/character_repository.dart';
+import 'package:disney_characters/data/api/favourite_api_client.dart';
+import 'package:disney_characters/domain/model/list_character.dart';
+import 'package:disney_characters/domain/repository/character_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../api/character_api_client.dart';
-import '../model/detail/detail_character.dart';
+import '../../domain/model/detail_character.dart';
 import 'dart:convert';
-import '../model/favourite/favourite_character.dart';
+import '../../domain/model/favourite_character.dart';
 
 class NetworkCharacterRepository implements CharacterRepository {
   final CharacterApiClient _characterApiClient;

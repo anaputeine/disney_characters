@@ -1,6 +1,6 @@
-import '../model/detail/detail_character.dart';
-import '../model/favourite/favourite_character.dart';
-import '../model/list/list_character.dart';
+import '../model/detail_character.dart';
+import '../model/favourite_character.dart';
+import '../model/list_character.dart';
 
 abstract class CharacterRepository {
 

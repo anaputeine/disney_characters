@@ -1,5 +1,5 @@
-import 'package:disney_characters/model/list/list_character.dart';
-import 'package:disney_characters/repository/character_repository.dart';
+import 'package:disney_characters/domain/model/list_character.dart';
+import 'package:disney_characters/domain/repository/character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

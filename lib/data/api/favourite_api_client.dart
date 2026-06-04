@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:disney_characters/model/favourite/favourite_object.dart';
+import 'package:disney_characters/data/model/favourite/favourite_object.dart';
 
 class FavouriteApiClient {
   final Dio _dio;

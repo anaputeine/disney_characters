@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:disney_characters/my_app.dart';
-import 'package:disney_characters/repository/character_repository.dart';
-import 'package:disney_characters/repository/network_character_repository.dart';
+import 'package:disney_characters/domain/repository/character_repository.dart';
+import 'package:disney_characters/data/repository/network_character_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'api/character_api_client.dart';
-import 'api/favourite_api_client.dart';
+import 'data/api/character_api_client.dart';
+import 'data/api/favourite_api_client.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,13 +21,12 @@ void main() {
     ),
   );
   final characterApiClient = CharacterApiClient(characterDio);
-  const _apiKey = String.fromEnvironment("apiKey");
-  print(_apiKey);
+  const apiKey = String.fromEnvironment("apiKey");
   final favouriteDio = Dio(
     BaseOptions(
       baseUrl: 'https://api.restful-api.dev/collections/favourites',
       headers: {
-        'x-api-key': _apiKey,
+        'x-api-key': apiKey,
       },
     ),
   );

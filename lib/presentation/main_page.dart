@@ -1,6 +1,5 @@
-import 'package:disney_characters/page/character_detail_page.dart';
-import 'package:disney_characters/page/favourites_page.dart';
-import 'package:disney_characters/page/home_page.dart';
+import 'package:disney_characters/presentation/favourites_page.dart';
+import 'package:disney_characters/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {

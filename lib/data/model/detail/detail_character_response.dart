@@ -1,4 +1,4 @@
-import 'package:disney_characters/model/detail/detail_character.dart';
+import 'package:disney_characters/domain/model/detail_character.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
