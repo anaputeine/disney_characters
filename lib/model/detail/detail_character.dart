@@ -26,5 +26,16 @@ class DetailCharacter extends Equatable {
   });
 
   @override
-  List<Object?> get props => [id, name, imageUrl];
+  List<Object?> get props => [
+    id,
+    films,
+    shortFilms,
+    tvShows,
+    videoGames,
+    parkAttractions,
+    allies,
+    enemies,
+    name,
+    imageUrl,
+  ];
 }

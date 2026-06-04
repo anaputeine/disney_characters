@@ -1,20 +1,16 @@
 import 'package:equatable/equatable.dart';
-import 'package:json_annotation/json_annotation.dart';
 
-part 'favourite_character.g.dart';
-
-@JsonSerializable(explicitToJson: true, createToJson: true)
-class FavouriteObject extends Equatable {
+class FavouriteCharacter extends Equatable {
   final String id;
+  final String name;
+  final String imageUrl;
 
-  const FavouriteObject({required this.id});
-
-  factory FavouriteObject.fromJson(Map<String, dynamic> json) =>
-      _$FavouriteObjectFromJson(json);
-
-  Map<String, dynamic> toJson() => _$FavouriteObjectToJson(this);
+  const FavouriteCharacter({
+    required this.id,
+    required this.name,
+    required this.imageUrl,
+  });
 
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id, name, imageUrl];
 }
-

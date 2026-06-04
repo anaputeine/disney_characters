@@ -1,0 +1,23 @@
+{
+  "info": {
+    "count": 1,
+    "totalPages": 1,
+    "previousPage": null,
+    "nextPage": null
+  },
+  "data": {
+    "_id": 12,
+    "films": [],
+    "shortFilms": [],
+    "tvShows": [
+      "Pickle and Peanut"
+    ],
+    "videoGames": [],
+    "parkAttractions": [],
+    "allies": [],
+    "enemies": [],
+    "name": "90's Adventure Bear",
+    "imageUrl": "https://static.wikia.nocookie.net/disney/images/3/3f/90%27s_Adventure_Bear_profile.png",
+    "url": "https://api.disneyapi.dev/characters/12"
+  }
+}

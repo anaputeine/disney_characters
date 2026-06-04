@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../api/character_api_client.dart';
 import '../model/detail/detail_character.dart';
 import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../model/favourite/favourite_character.dart';
 
 class NetworkCharacterRepository implements CharacterRepository {
   final CharacterApiClient _characterApiClient;
@@ -25,14 +25,14 @@ class NetworkCharacterRepository implements CharacterRepository {
     return response.data.toDetailCharacter();
   }
 
-  /*
   @override
-  Future<List<ListCharacter>> getFavouritesCharacters() async {
+  Future<List<FavouriteCharacter>> getFavouritesCharacters() async {
     final favourites = await _getValues();
-    final response = await _characterApiClient.getTheseCharacters(favourites.values.toList());
-    return response;
+    final response = await _characterApiClient.getTheseCharacters(
+      favourites.keys.toList(),
+    );
+    return response.map((item) => item.toFavouriteCharacter()).toList();
   }
-  */
 
   @override
   Future<void> addFavourite(String actualId) async {

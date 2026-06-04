@@ -30,11 +30,6 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
     return FutureBuilder<DetailCharacter>(
       future: _character,
       builder: (context, snapshot) {
-        print('state=${snapshot.connectionState}');
-        print('hasData=${snapshot.hasData}');
-        print('hasError=${snapshot.hasError}');
-        print('data=${snapshot.data}');
-        print('error=${snapshot.error}');
         final connectionState = snapshot.connectionState;
         if (connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -64,40 +59,38 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
               ),
             ),
           ),
-          body: Expanded(
-            child: ListView(
-              padding: .all(12),
-              children: [
-                SizedBox(height: 16),
-                Image.network(
-                  character.imageUrl,
-                  width: 400,
-                  height: 300,
-                  fit: .cover,
+          body: ListView(
+            padding: .all(12),
+            children: [
+              SizedBox(height: 16),
+              Image.network(
+                character.imageUrl,
+                width: 400,
+                height: 300,
+                fit: .cover,
 
-                  errorBuilder: (context, error, stackTrace) {
-                    return Image.network(
-                      'https://i.pinimg.com/736x/d7/18/3f/d7183f72078df410f83279c1b7bbc191.jpg',
-                    );
-                  },
-                ),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "Films", items: character.films),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "Short Films", items: character.shortFilms),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "TvShows", items: character.tvShows),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "Video Games", items: character.videoGames),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "Park Attractions", items: character.parkAttractions),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "Allies", items: character.allies),
-                SizedBox(height: 16),
-                _HorizontalStringList(title: "Enemies", items: character.enemies),
-                SizedBox(height: 32),
-              ],
-            ),
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.network(
+                    'https://i.pinimg.com/736x/d7/18/3f/d7183f72078df410f83279c1b7bbc191.jpg',
+                  );
+                },
+              ),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "Films", items: character.films),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "Short Films", items: character.shortFilms),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "TvShows", items: character.tvShows),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "Video Games", items: character.videoGames),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "Park Attractions", items: character.parkAttractions),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "Allies", items: character.allies),
+              SizedBox(height: 16),
+              _HorizontalStringList(title: "Enemies", items: character.enemies),
+              SizedBox(height: 32),
+            ],
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () async {

@@ -33,10 +33,11 @@ class _HomePageState extends State<HomePage> {
       body: FutureBuilder<List<ListCharacter>>(
         future: _charactersFuture,
         builder: (context, snapshot) {
-          print('state=${snapshot.connectionState}');
-          print('hasData=${snapshot.hasData}');
-          print('hasError=${snapshot.hasError}');
-          print('data=${snapshot.data}');
+          //print('HOMEPAGE');
+          //print('state=${snapshot.connectionState}');
+          //print('hasData=${snapshot.hasData}');
+          //print('hasError=${snapshot.hasError}');
+          //print('data=${snapshot.data}');
           print('error=${snapshot.error}');
           final connectionState = snapshot.connectionState;
           if (connectionState == ConnectionState.waiting) {
@@ -62,8 +63,8 @@ class _HomePageState extends State<HomePage> {
                     Image.network(
                       character.imageUrl,
                       width: 400,
-                      height: 200,
-                      fit: .cover,
+                      height: 268,
+                      fit: .fill,
 
                       errorBuilder: (context, error, stackTrace) {
                         return Image.network(

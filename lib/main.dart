@@ -21,12 +21,13 @@ void main() {
     ),
   );
   final characterApiClient = CharacterApiClient(characterDio);
-
+  const _apiKey = String.fromEnvironment("apiKey");
+  print(_apiKey);
   final favouriteDio = Dio(
     BaseOptions(
       baseUrl: 'https://api.restful-api.dev/collections/favourites',
       headers: {
-        'x-api-key': '135abbe8-a69a-48c9-872b-ae4f0c56c0cd',
+        'x-api-key': _apiKey,
       },
     ),
   );

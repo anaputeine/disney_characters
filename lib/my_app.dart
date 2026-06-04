@@ -1,4 +1,4 @@
-import 'package:disney_characters/page/home_page.dart';
+import 'package:disney_characters/page/main_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(),
+      home: const MainPage(),
     );
   }
 }

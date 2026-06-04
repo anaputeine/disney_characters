@@ -1,5 +1,6 @@
-import 'package:disney_characters/model/list/list_character.dart';
 import '../model/detail/detail_character.dart';
+import '../model/favourite/favourite_character.dart';
+import '../model/list/list_character.dart';
 
 abstract class CharacterRepository {
 
@@ -7,7 +8,7 @@ abstract class CharacterRepository {
 
   Future<DetailCharacter> getOneCharacter(String id);
 
-  //Future<List<ListCharacter>> getFavouritesCharacters();
+  Future<List<FavouriteCharacter>> getFavouritesCharacters();
 
   Future<void> addFavourite(String actualId);
 
