@@ -2,6 +2,7 @@ import 'package:disney_characters/presentation/favourite/bloc/favourite_cubit.da
 import 'package:disney_characters/presentation/favourite/bloc/favourite_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../l10n/app_localizations.dart';
 
 class FavouritesPage extends StatefulWidget {
   const FavouritesPage({super.key});
@@ -36,8 +37,8 @@ class _FavouritesPageState extends State<FavouritesPage> {
             child: CircularProgressIndicator(),
           );
         } else if (state.isError) {
-          child = const Center(
-            child: Text('Failed to load'),
+          child = Center(
+            child: Text(AppLocalizations.of(context)!.failedToLoad),
           );
         } else {
           final characters = state.chars;
@@ -88,7 +89,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            title: const Text("your favourite characters"),
+            title: Text(AppLocalizations.of(context)!.yourFavouriteCharacters),
           ),
           body: child,
         );

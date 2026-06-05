@@ -3,6 +3,8 @@ import 'package:disney_characters/presentation/detail/bloc/detail_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../l10n/app_localizations.dart';
+
 class CharacterDetailPage extends StatefulWidget {
   const CharacterDetailPage({super.key});
 
@@ -39,12 +41,12 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
             child: CircularProgressIndicator(),
           );
         } else if (state.isError) {
-          child = const Center(
-            child: Text('Failed to load'),
+          child = Center(
+            child: Text(AppLocalizations.of(context)!.failedToLoad),
           );
         } else {
           final character = state.char;
-          final _isFavourite = state.isFavourite;
+          final isFavourite = state.isFavourite;
           child = Scaffold(
             appBar: AppBar(
               backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -73,19 +75,19 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
                   },
                 ),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "Films", items: character.films),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.films, items: character.films),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "Short Films", items: character.shortFilms),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.shortFilms, items: character.shortFilms),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "TvShows", items: character.tvShows),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.tvShows, items: character.tvShows),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "Video Games", items: character.videoGames),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.videoGames, items: character.videoGames),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "Park Attractions", items: character.parkAttractions),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.parkAttractions, items: character.parkAttractions),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "Allies", items: character.allies),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.allies, items: character.allies),
                 SizedBox(height: 16),
-                _HorizontalStringList(title: "Enemies", items: character.enemies),
+                _HorizontalStringList(title: AppLocalizations.of(context)!.enemies, items: character.enemies),
                 SizedBox(height: 32),
               ],
             ),
@@ -94,7 +96,7 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
                 _cubit.toggleFavourite();
               },
               child: Icon(
-                _isFavourite ? Icons.favorite : Icons.favorite_border,
+                isFavourite ? Icons.favorite : Icons.favorite_border,
               ),
             ),
           );

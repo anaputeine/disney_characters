@@ -2,6 +2,8 @@ import 'package:disney_characters/presentation/favourite/favourites_page.dart';
 import 'package:disney_characters/presentation/list/home_page.dart';
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -34,12 +36,12 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             icon: const Icon(Icons.home),
-            label: 'Home',
+            label: AppLocalizations.of(context)!.home,
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             icon: const Icon(Icons.favorite),
-            label: 'Favourites',
+            label: AppLocalizations.of(context)!.favourites,
           ),
         ],
       ),

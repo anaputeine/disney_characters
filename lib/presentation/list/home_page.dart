@@ -5,6 +5,7 @@ import 'package:disney_characters/presentation/list/bloc/list_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../detail/character_detail_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,8 +41,8 @@ class _HomePageState extends State<HomePage> {
             child: CircularProgressIndicator(),
           );
         } else if (state.isError) {
-          child = const Center(
-            child: Text('Failed to load'),
+          child =  Center(
+            child: Text(AppLocalizations.of(context)!.failedToLoad),
           );
         } else {
           final characters = state.chars;
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            title: const Text("disney characters"),
+            title: Text(AppLocalizations.of(context)!.disneyCharacters),
           ),
           body: child,
         );
