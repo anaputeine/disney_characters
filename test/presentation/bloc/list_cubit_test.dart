@@ -1,8 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:disney_characters/domain/model/favourite_character.dart';
 import 'package:disney_characters/domain/model/list_character.dart';
-import 'package:disney_characters/presentation/detail/bloc/detail_cubit.dart';
-import 'package:disney_characters/presentation/favourite/bloc/favourite_cubit.dart';
 import 'package:disney_characters/presentation/list/bloc/list_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'fake_character_repository.dart';
